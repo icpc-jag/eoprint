@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<GridPane hgap="14.0" maxHeight="+Infinity" maxWidth="+Infinity" minHeight="-Infinity" minWidth="-Infinity" vgap="20.0"
+          xmlns:fx="http://javafx.com/fxml" fx:controller="print.DialogController">
+    <children>
+        <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0"
+                   GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="TOP">
+            <image>
+                <!-- place holder -->
+            </image>
+        </ImageView>
+        <VBox maxHeight="+Infinity" maxWidth="+Infinity" minHeight="-Infinity" prefWidth="400.0" spacing="7.0"
+              GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <children>
+                <Label fx:id="messageLabel" text="new postscript files location" textAlignment="LEFT" wrapText="true">
+                    <font>
+                        <Font name="System Bold" size="13.0"/>
+                    </font>
+                </Label>
+                <GridPane prefWidth="400.0">
+                    <children>
+                        <Label text="URL:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                        <Label text="user name:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                        <Label text="password:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                        <Label text="interval:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                        <TextField fx:id="urlField" prefWidth="200.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="0" cache="true"/>
+                        <TextField fx:id="userField" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1"
+                                   cache="true"/>
+                        <PasswordField fx:id="passField" prefWidth="200.0" GridPane.columnIndex="1"
+                                       GridPane.rowIndex="2" cache="true"/>
+                        <TextField fx:id="intervalField" text="30000" prefWidth="200.0" GridPane.columnIndex="1"
+                                   GridPane.rowIndex="3" cache="true"/>
+                    </children>
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="199.0" minWidth="10.0" prefWidth="80.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="320.0" minWidth="10.0" prefWidth="320.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                </GridPane>
+            </children>
+        </VBox>
+        <HBox maxHeight="-Infinity" maxWidth="+Infinity" minHeight="-Infinity" minWidth="-Infinity"
+              GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <children>
+                <HBox id="HBox" fx:id="actionParent" alignment="CENTER">
+                    <HBox.margin>
+                        <Insets/>
+                    </HBox.margin>
+                </HBox>
+                <Pane maxWidth="+Infinity" HBox.hgrow="ALWAYS"/>
+                <Button fx:id="cancelButton" onAction="#cancelAction" cancelButton="true" minWidth="80.0"
+                        mnemonicParsing="false" text="Cancel"
+                        HBox.hgrow="NEVER">
+                    <HBox.margin>
+                        <Insets/>
+                    </HBox.margin>
+                </Button>
+                <HBox id="HBox" fx:id="okParent" alignment="CENTER">
+                    <children>
+                        <Button fx:id="okButton" onAction="#okAction" defaultButton="true" minWidth="80.0"
+                                mnemonicParsing="false" text="Ok"
+                                HBox.hgrow="NEVER">
+                            <HBox.margin>
+                                <Insets left="14.0"/>
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </HBox>
+    </children>
+    <columnConstraints>
+        <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity"/>
+        <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="+Infinity" minWidth="-Infinity"/>
+    </columnConstraints>
+    <padding>
+        <Insets bottom="14.0" left="14.0" right="14.0" top="14.0"/>
+    </padding>
+    <rowConstraints>
+        <RowConstraints maxHeight="+Infinity" minHeight="-Infinity" valignment="CENTER" vgrow="ALWAYS"/>
+        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="NEVER"/>
+    </rowConstraints>
+</GridPane>
