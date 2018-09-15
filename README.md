@@ -28,18 +28,18 @@ auto print for jag onsite contest
 Mac なら USB で接続後，以下の通りに実行すれば動くはず．
 Win は LPD ポートの設定などがあるため，少し面倒．
 
-* git clone
+* Clone repository
 ```
 git clone https://github.com/icpc-jag/eoprint.git
 ```
 
-* compile (in)
+* Compile
 ```
 cd eoprint
 javac print/*.java
 ```
 
-* build jar
+* Build jar
 ```
 jar cvf print.jar print
 ```
