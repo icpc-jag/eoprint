@@ -21,3 +21,30 @@ auto print for jag onsite contest
 * java (version 要件忘れた)
 * javafx を使っているので GUI 環境
   * CUI 用に改造するのは難しくないはず
+
+動かし方
+---------
+
+Mac なら USB で接続後，以下の通りに実行すれば動くはず．
+Win は LPD ポートの設定などがあるため，少し面倒．
+
+* git clone
+```
+git clone https://github.com/icpc-jag/eoprint.git
+```
+
+* compile (in)
+```
+cd eoprint
+javac print/*.java
+```
+
+* build jar
+```
+jar cvf print.jar print
+```
+
+* Run
+```
+java -cp print.jar print.Main
+```
