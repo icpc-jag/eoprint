@@ -18,9 +18,10 @@ auto print for jag onsite contest
 必要なもの
 ----------
 
-* java (version 要件忘れた)
+* java（`brew install openjdk@17` でインストールできるもので動作が確認できた）
 * javafx を使っているので GUI 環境
   * CUI 用に改造するのは難しくないはず
+* [OpenJFX](https://gluonhq.com/products/javafx/)（Java 11 から JavaFX が同梱されなくなってしまったので）
 
 動かし方
 ---------
@@ -33,10 +34,23 @@ Win は LPD ポートの設定などがあるため，少し面倒．
 git clone https://github.com/icpc-jag/eoprint.git
 ```
 
-* Compile
+* Download OpenJFX
+
+ [OpenJFX のダウンロードリンクから辿れるサイト](https://gluonhq.com/products/javafx/) から利用している OS、アーキテクチャの SDK をダウンロードする。
+
+展開したものを eoprint ディレクトリ内に javafx という名前で配置する
+
 ```
 cd eoprint
-javac print/*.java
+mv ~/Downloads/ openjfx-20.0.2_osx-x64_bin-sdk.zip
+unzip openjfx-20.0.2_osx-x64_bin-sdk.zip
+mv javafx-sdk-20.0.2/lib javafx
+
+```
+
+* Compile
+```
+javac --module-path javafx --add-modules=javafx.controls,javafx.fxml print/*.java
 ```
 
 * Build jar
@@ -46,5 +60,5 @@ jar cvf print.jar print
 
 * Run
 ```
-java -cp print.jar print.Main
+java --module-path javafx --add-modules=javafx.controls,javafx.fxml -cp print.jar print.Main
 ```
