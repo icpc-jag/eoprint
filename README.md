@@ -42,7 +42,7 @@ git clone https://github.com/icpc-jag/eoprint.git
 
 ```
 cd eoprint
-mv ~/Downloads/ openjfx-20.0.2_osx-x64_bin-sdk.zip
+mv ~/Downloads/openjfx-20.0.2_osx-x64_bin-sdk.zip .
 unzip openjfx-20.0.2_osx-x64_bin-sdk.zip
 mv javafx-sdk-20.0.2/lib javafx
 
